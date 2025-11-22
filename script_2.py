@@ -2,13 +2,22 @@ class Dog:
     #Class is analogus to a blueprint (eg String, List, Dictionary etc)
     # Method to make the dog bark
     # Methods are functions defined inside a class eg(.upper(), .append() etc)
-    def __init__(self, name, breed):
+    def __init__(self, name, breed, owner):
         self.name = name
         self.breed = breed
+        self.owner = owner
         pass
     
     def bark(self):
         print("woof woof")
+
+class Owner:
+    def __init__(self,name, address, contact_number):
+        self.name = name
+        self.address = address
+        ## these names can be different from the parameter names
+        self.phone_number = contact_number
+        pass
     
 # dog1 = Dog()
 # dog1.bark()
@@ -29,6 +38,10 @@ print(name.upper())  # Calling the .upper() method on the string object 'name'
 
 #hence dog_1 = Dog() will throw an error now
 
-dog_1 = Dog("Buddy", "Golden Retriever")
-dog_1.bark()  # Calling the bark method on the dog_1 object
-print(dog_1.name)  # Accessing the name attribute of dog_1
+# dog_1 = Dog("Buddy", "Golden Retriever")
+# dog_1.bark()  # Calling the bark method on the dog_1 object
+# print(dog_1.name)  # Accessing the name attribute of dog_1
+
+owner_1 = Owner("Alice", "123 Main St", "555-1234")
+dog_1 = Dog("Buddy", "Golden Retriever", owner_1)
+print(dog_1.owner.name)  # Accessing the owner's name through the dog_1 object
